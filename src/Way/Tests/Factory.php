@@ -248,10 +248,10 @@ class Factory {
         {
             if ($relation = $this->hasForeignKey($key))
             {
-                $this->class->$key = $this->createRelationship($relation);
+                $this->class->{$col->getName()} = $this->createRelationship($relation);
                 continue;
             }
-            $this->class->$key = $this->setColumn($key, $col);
+            $this->class->{$col->getName()} = $this->setColumn($key, $col);
         }
     }
 
